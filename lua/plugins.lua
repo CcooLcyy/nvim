@@ -13,11 +13,23 @@ vim.opt.rtp:prepend(lazypath)
  
 require("lazy").setup(
     {
-        "morhetz/gruvbox",
+        -- theme
+        {
+            "morhetz/gruvbox",
+        }
+        -- nvim-tree
         {
             "kyazdani42/nvim-tree.lua",
             event = 'VimEnter',
             dependencies = "nvim-tree/nvim-web-devicons"
-        }
+        },
+
+        -- lualine
+        {
+            "nvim-lualine/lualine.nvim",
+            dependencies = {
+                "nvim-tree/nvim-web-devicons"
+            }
+        },
     }
 )

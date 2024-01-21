@@ -10,7 +10,7 @@ vim.opt.shiftwidth = 4
 vim.opt.tabstop = 4
 
 vim.g.encoding = "UTF-8"
-vim.opt.fileencoding = "utf-8"
+vim.opt.fileencoding = "UTF-8"
 vim.opt.autoread = true
 
 vim.opt.number = true
