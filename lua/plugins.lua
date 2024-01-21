@@ -16,7 +16,7 @@ require("lazy").setup(
         -- theme
         {
             "morhetz/gruvbox",
-        }
+        },
         -- nvim-tree
         {
             "kyazdani42/nvim-tree.lua",
@@ -30,6 +30,6 @@ require("lazy").setup(
             dependencies = {
                 "nvim-tree/nvim-web-devicons"
             }
-        },
+        }
     }
 )

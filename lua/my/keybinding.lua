@@ -8,4 +8,4 @@ vim.keymap.set("n", "<", "<gv", opt)
 vim.keymap.set("n", ">", ">gv", opt)
 
 -- nvim-tree
-vim.keymap.set("n", "<C-m>", nvim-tree-api.tree.toggle(), opt)
+vim.keymap.set("n", "<C-m>", ":NvimTreeToggle", opt)
