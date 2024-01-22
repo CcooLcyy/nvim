@@ -1,3 +1,5 @@
+vim.g.loaded_netrw = 1
+
 require "plugins"
 
 require "plugins-config.nvim-tree"
