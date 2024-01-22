@@ -1,11 +1,10 @@
-vim.g.mapleader = " "
-vim.g.maplocalleader = " "
-
-local opt = {noremap = true, silent = true}
+opt = {noremap = true, silent = true}
+map = vim.api.nvim_set_keymap
 
 -- 缩进
-vim.keymap.set("n", "<", "<gv", opt)
-vim.keymap.set("n", ">", ">gv", opt)
+vim.api.nvim_set_keymap('n', '<', '<gv', opt)
+vim.api.nvim_set_keymap('n', '>', '>gv', opt)
 
 -- nvim-tree
-vim.keymap.set("n", "<C-m>", ":NvimTreeToggle", opt)
+map('n', '<C-m>',
+    ':lua require("nvim-tree.api").tree.toggle()<CR>',opt)
