@@ -1,10 +1,10 @@
+-- help nvim-tree
 vim.g.loaded_netrw = 1
 
-require "plugins"
+-- enable lazy.nvim
+require "pluginsManager"
 
-require "plugins-config.nvim-tree"
-require "plugins-config.lualine"
-
+-- my config files
 require "my.options"
 require "my.keybinding"
 
