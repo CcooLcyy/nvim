@@ -15,22 +15,5 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
     require("plugins.gruvbox"),
     require("plugins.nvim_tree"),
+    require("plugins.lualine"),
 })
---     {
---         -- theme
---             "morhetz/gruvbox",
---         -- nvim-tree
---         {
---             "nvim-tree/nvim-tree.lua",
---             version = "*",
---             lazy = false,
---             dependencies = "nvim-tree/nvim-web-devicons"
---         },
-
---         -- lualine
---         {
---             "nvim-lualine/lualine.nvim",
---             dependencies = "nvim-tree/nvim-web-devicons"
---         },
---     }
--- )

@@ -11,9 +11,6 @@ local nvim_tree = {
             git = {
                 enable = true,
             },
-            view = {
-                width = 30,
-            },
             renderer = {
                 group_empty = true,
             },
