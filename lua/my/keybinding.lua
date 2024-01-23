@@ -11,9 +11,4 @@ map('n', '>', '>gv', opt)
 map('n', '<C-s>', ':w<CR>', opt)
 
 -- nvim-tree
-map('n', '<leader>m', ':lua require("nvim-tree.api").tree.open()<CR>', opt)
-
--- 自动括号匹配
-map('i', '(', '()<LEFT>', opt)
-map('i', '{', '{}<LEFT>', opt)
-map('i', '[', '[]<LEFT>', opt)
+map('n', '<C-m>', ':lua require("nvim-tree.api").tree.open()<CR>', opt)

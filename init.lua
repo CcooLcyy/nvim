@@ -2,10 +2,10 @@
 vim.g.loaded_netrw = 1
 
 -- enable lazy.nvim
-require "pluginsManager"
+require("pluginsManager")
 
 -- my config files
-require "my.options"
-require "my.keybinding"
+require("my.options")
+require("my.keybinding")
 
 vim.cmd.colorscheme "gruvbox"
