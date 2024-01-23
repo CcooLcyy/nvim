@@ -1,8 +1,9 @@
 local lsp_config = {
     "neovim/nvim-lspconfig",
+    lazy = false,
     config = function()
         -- Set up lspconfig.
-        local servers = {'clangd'}
+        local servers = {"clangd", "lua_ls", "cmake"}
         for _, lsp in ipairs(servers) do
             require("lspconfig")[lsp].setup {
                 -- on_attach = my_custom_on_attach,
