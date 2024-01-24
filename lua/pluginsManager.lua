@@ -16,6 +16,7 @@ require("lazy").setup({
     -- theme
     require("plugins.gruvbox"),
     require("plugins.lualine"),
+    require("plugins.startup"),
 
     -- file browser
     require("plugins.nvim_tree"),
