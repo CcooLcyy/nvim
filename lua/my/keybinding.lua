@@ -43,12 +43,6 @@ map('n', '<leader>t', '<cmd>ToggleTerm<CR>', opt)
 function _G.set_terminal_keymaps()
     local opts = {buffer = 0}
     vim.keymap.set('t', '<esc>', [[<C-\><C-n>]], opts)
-    -- 当按下下列方向键切换到特定位置的窗口
-    vim.keymap.set('t', '<C-h>', [[<Cmd>wincmd h<CR>]], opts)
-    vim.keymap.set('t', '<C-j>', [[<Cmd>wincmd j<CR>]], opts)
-    vim.keymap.set('t', '<C-k>', [[<Cmd>wincmd k<CR>]], opts)
-    vim.keymap.set('t', '<C-l>', [[<Cmd>wincmd l<CR>]], opts)
-    vim.keymap.set('t', '<C-w>', [[<C-\><C-n><C-w>]], opts)
 end
 -- if you only want these mappings for toggle term use term://*toggleterm#* instead
 -- 设置一个全局函数，当进入终端模式时才会进行映射
