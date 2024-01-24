@@ -37,4 +37,7 @@ require("lazy").setup({
 
     -- highlight
     require("plugins.autopair"),
+
+    -- git
+    require("plugins.git"),
 })
