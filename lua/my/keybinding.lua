@@ -3,15 +3,14 @@ vim.g.mapleader = " "
 local map = vim.api.nvim_set_keymap
 local opt = {noremap = true, silent = true}
 
--- 缩进
-map('n', '<', '<gv', opt)
-map('n', '>', '>gv', opt)
-
--- 
+-- 关闭窗口
 map('n', '<leader>w', '<cmd>bd<CR>', opt)
 
 -- 保存
 map('n', '<C-s>', ':w<CR>', opt)
+
+-- 左右分割窗口
+map('n', '<leader>v', '<cmd>vs', opt)
 
 -- nvim-tree
 map('n', '<C-m>',
