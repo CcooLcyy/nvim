@@ -9,3 +9,4 @@ require("my.options")
 require("my.keybinding")
 
 vim.cmd.colorscheme "gruvbox"
+vim.opt.termguicolors = true

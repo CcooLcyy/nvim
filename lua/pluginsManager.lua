@@ -13,10 +13,11 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-    -- theme
-    require("plugins.gruvbox"),
-    require("plugins.lualine"),
-    require("plugins.startup"),
+    -- appearence
+    require("plugins.appearance.theme"),
+    require("plugins.appearance.startup"),
+    require("plugins.appearance.bufferline"),
+    require("plugins.appearance.lualine"),
 
     -- file browser
     require("plugins.nvim_tree"),
