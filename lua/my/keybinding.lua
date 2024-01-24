@@ -7,10 +7,10 @@ local opt = {noremap = true, silent = true}
 map('n', '<leader>w', '<cmd>bd<CR>', opt)
 
 -- 保存
-map('n', '<C-s>', ':w<CR>', opt)
+map('n', '<C-s>', '<cmd>w<CR>', opt)
 
 -- 左右分割窗口
-map('n', '<leader>v', '<cmd>vs', opt)
+map('n', '<leader>v', '<cmd>vs<CR>', opt)
 
 -- nvim-tree
 map('n', '<C-m>',
