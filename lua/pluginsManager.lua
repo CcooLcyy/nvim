@@ -22,6 +22,9 @@ require("lazy").setup({
     -- file browser
     require("plugins.nvim_tree"),
 
+    -- terminal
+    require("plugins.terminal"),
+
     -- lsp
     require("plugins.lsp.mason_config"),
     require("plugins.lsp.mason"),

@@ -1,4 +1,4 @@
-local nvim_tree = {
+return {
     "nvim-tree/nvim-tree.lua",
     version = "*",
     lazy = false,
@@ -19,7 +19,4 @@ local nvim_tree = {
             },
         })
     end,
-    
 }
-
-return nvim_tree
