@@ -1,4 +1,14 @@
-# 插件
+# plugins
+
+## appearance
+
+bufferline: for manage the buffer easily.
+
+lualine: add a bar at the button of activily buffer.
+
+alpha-nvim: show a greater when run nvim barely.
+
+gruvbox: a theme.
 
 # 使用方法
 
@@ -28,3 +38,7 @@ save and close flie: `leader s w`
 使用toggleterm插件以及进入terminal模式的时候的leader键按下之后会有延迟，原因是在terminal模式下，在可以输入命令的情况下也会触发leader键。
 
 fix: In terminal mode, set the leader key to the corresponding actual behavior, which is the space bar.
+
+# something else
+
+There is something woring when I typing Chinese in the lazygit, the display went woring. So I gradually switch from Chinese to English.
