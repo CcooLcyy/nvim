@@ -3,7 +3,7 @@ vim.g.mapleader = " "
 local map = vim.api.nvim_set_keymap
 local opt = {noremap = true, silent = true}
 
----------------------------------------------------------------
+--------------------------------------------------------------------------------
 -- some behaviors when close and save files.
 
 -- close file
@@ -12,8 +12,44 @@ map('n', '<leader><leader>w', '<cmd>q!<CR>', opt)
 -- save file
 map('n', '<leader>s', '<cmd>w<CR>', opt)
 -- save and quit file
-map('n', '<leader>sw', '<cmd>wq<cr>', opt)
----------------------------------------------------------------
+map('n', '<leader><leader>s', '<cmd>wq<cr>', opt)
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+-- terminal
+local Terminal  = require('toggleterm.terminal').Terminal
+
+-- lazygit in terminal
+local lazygit = Terminal:new({cmd = "lazygit", hidden = true})
+function _lazygit_toggle()
+  lazygit:toggle()
+end
+map('n', '<leader>g', '<cmd>lua _lazygit_toggle()<cr>', opt)
+
+-- cmake in terminal
+local source = Terminal:new({
+    cmd = 'cmake -S . -B cmake-build -G"Unix Makefiles"\
+           -DCMAKE_TOOLCHAIN_FILE = \
+               "E:/run_time/vcpkg/scripts/buildsystems/vcpkg.cmake"',
+    hidden = true,
+    close_on_exit = false
+})
+function _cmake_source()
+    source:toggle()
+end
+
+local build = Terminal:new({
+    cmd = 'cmake --build cmake-build ',
+    hidden = true,
+    close_on_exit = false
+})
+function _cmake_build()
+    build:toggle()
+end
+
+map('n', '<leader>cs', '<cmd>lua _cmake_source()<cr>' ,opt)
+map('n', '<leader>cb', '<cmd>lua _cmake_build()<cr>' ,opt)
+--------------------------------------------------------------------------------
 
 -- 左右分割窗口
 map('n', '<leader>v', '<cmd>vs<CR>', opt)
@@ -47,7 +83,7 @@ map('n', '<leader>9',
 map('n', '<leader>t', '<cmd>ToggleTerm<CR>', opt)
 function _G.set_terminal_keymaps()
     local opts = {buffer = 0}
-    vim.keymap.set('t', '<esc>', [[<C-\><C-n>]], opts)
+    vim.keymap.set('t', '<esc><esc>', [[<C-\><C-n>]], opts)
 end
 -- if you only want these mappings for toggle term use term://*toggleterm#* instead
 -- 设置一个全局函数，当进入终端模式时才会进行映射
