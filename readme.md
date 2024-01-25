@@ -6,13 +6,16 @@
 
 在不同的buffer之间进行切换可以通过`ctrl + w`和不同的`hjkl`四个方向键来选择不同方向的窗口
 
-# 快捷按键
+# key mapping
 
-leader键：空格
+## 
+leader key: `space bar`
 
-关闭窗口：leader w
+close window: `leader w`
 
-保存：ctrl s
+save file: `leader s`
+
+save and close flie: `leader s w`
 
 左右分割窗口：leader v
 
@@ -22,4 +25,6 @@ leader键：空格
 
 # 已知问题
 
-在使用toggleterm插件以及进入terminal模式的时候的leader键按下之后会有延迟
+使用toggleterm插件以及进入terminal模式的时候的leader键按下之后会有延迟，原因是在terminal模式下，在可以输入命令的情况下也会触发leader键。
+
+fix: In terminal mode, set the leader key to the corresponding actual behavior, which is the space bar.
