@@ -28,9 +28,11 @@ map('n', '<leader>g', '<cmd>lua _lazygit_toggle()<cr>', opt)
 
 -- cmake in terminal
 local source = Terminal:new({
-    cmd = 'cmake -S . -B cmake-build -G"Unix Makefiles"\
-           -DCMAKE_TOOLCHAIN_FILE = \
-               "E:/run_time/vcpkg/scripts/buildsystems/vcpkg.cmake"',
+    cmd =   'cmake -S . -B cmake-build -G "Unix Makefiles" '..
+            '--no-warn-unused-cli -DCMAKE_BUILD_TYPE:STRING=Debug '..
+            '-DCMAKE_TOOLCHAIN_FILE:STRING='..
+                'E:/run_time/vcpkg/scripts/buildsystems/vcpkg.cmake '..
+            '-DCMAKE_EXPORT_COMPILE_COMMANDS:BOOL=TRUE ',
     hidden = true,
     close_on_exit = false
 })
@@ -86,5 +88,5 @@ function _G.set_terminal_keymaps()
     vim.keymap.set('t', '<esc><esc>', [[<C-\><C-n>]], opts)
 end
 -- if you only want these mappings for toggle term use term://*toggleterm#* instead
--- 设置一个全局函数，当进入终端模式时才会进行映射
+-- set a global func, which is enable in terminal mode
 vim.cmd('autocmd! TermOpen term://* lua set_terminal_keymaps()')
