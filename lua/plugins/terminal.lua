@@ -3,10 +3,14 @@ return {
     version = "*",
     config = function ()
         require("toggleterm").setup{
-            open_mapping = [[<leader>t]],
+            direction = "float",
+            -- open_mapping = [[<leader>t]],
             autochdir = true,
             start_in_insert = true,
-            shell = 'bash'
+            shell = 'bash',
+            float_opts = {
+                border = "curved",
+            }
         }
     end
 }
