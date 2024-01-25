@@ -3,17 +3,17 @@ vim.g.mapleader = " "
 local map = vim.api.nvim_set_keymap
 local opt = {noremap = true, silent = true}
 
--- ban leader key in terminal mode
-map('t', '<leader>', '<space>', {noremap = true})
+---------------------------------------------------------------
+-- some behaviors when close and save files.
 
--- 关闭窗口
+-- close file
 map('n', '<leader>w', '<cmd>bd<CR>', opt)
 map('n', '<leader><leader>w', '<cmd>q!<CR>', opt)
-
 -- save file
 map('n', '<leader>s', '<cmd>w<CR>', opt)
 -- save and quit file
 map('n', '<leader>sw', '<cmd>wq<cr>', opt)
+---------------------------------------------------------------
 
 -- 左右分割窗口
 map('n', '<leader>v', '<cmd>vs<CR>', opt)
