@@ -10,3 +10,4 @@ require("my.keybinding")
 
 vim.cmd.colorscheme "gruvbox"
 vim.opt.termguicolors = true
+vim.wo.colorcolumn = "80"
