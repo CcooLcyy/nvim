@@ -7,12 +7,12 @@ local opt = {noremap = true, silent = true}
 -- some behaviors when close and save files.
 
 -- close file
-map('n', '<leader>w', '<cmd>bd<CR>', opt)
-map('n', '<leader><leader>w', '<cmd>q!<CR>', opt)
+map('n', '<leader>q', '<cmd>bd<CR>', opt)
+map('n', '<leader><leader>q', '<cmd>bd!<CR>', opt)
 -- save file
-map('n', '<leader>s', '<cmd>w<CR>', opt)
+map('n', '<leader>w', '<cmd>w<CR>', opt)
 -- save and quit file
-map('n', '<leader><leader>s', '<cmd>wq<cr>', opt)
+map('n', '<leader><leader>w', '<cmd>w|bd<cr>', opt)
 --------------------------------------------------------------------------------
 
 --------------------------------------------------------------------------------
