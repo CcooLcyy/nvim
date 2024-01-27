@@ -28,7 +28,8 @@ map('n', '<leader>g', '<cmd>lua _lazygit_toggle()<cr>', opt)
 
 -- cmake in terminal
 local source = Terminal:new({
-    cmd =   'cmake -S . -B cmake-build -G "Unix Makefiles" '..
+    cmd =   'rm -rf cmake-build && '..
+            'cmake -S . -B cmake-build -G "Unix Makefiles" '..
             '--no-warn-unused-cli -DCMAKE_BUILD_TYPE:STRING=Debug '..
             '-DCMAKE_TOOLCHAIN_FILE:STRING='..
                 'E:/run_time/vcpkg/scripts/buildsystems/vcpkg.cmake '..
