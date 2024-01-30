@@ -28,8 +28,7 @@ map('n', '<leader>g', '<cmd>lua _lazygit_toggle()<cr>', opt)
 
 -- cmake in terminal
 local source = Terminal:new({
-    cmd =   'rm -rf cmake-build && '..
-            'cmake -S . -B cmake-build -G "Unix Makefiles" '..
+    cmd =   'cmake -S . -B cmake-build -G "Unix Makefiles" '..
             '--no-warn-unused-cli -DCMAKE_BUILD_TYPE:STRING=Debug '..
             '-DCMAKE_TOOLCHAIN_FILE:STRING='..
                 'E:/run_time/vcpkg/scripts/buildsystems/vcpkg.cmake '..
@@ -41,6 +40,20 @@ function _cmake_source()
     source:toggle()
 end
 
+local clean_source = Terminal:new({
+    cmd =   'rm -rf cmake-build && '..
+            'cmake -S . -B cmake-build -G "Unix Makefiles" '..
+            '--no-warn-unused-cli -DCMAKE_BUILD_TYPE:STRING=Debug '..
+            '-DCMAKE_TOOLCHAIN_FILE:STRING='..
+                'E:/run_time/vcpkg/scripts/buildsystems/vcpkg.cmake '..
+            '-DCMAKE_EXPORT_COMPILE_COMMANDS:BOOL=TRUE ',
+    hidden = true,
+    close_on_exit = false
+})
+function _cmake_clean_source()
+    clean_source:toggle()
+end
+
 local build = Terminal:new({
     cmd = 'cmake --build cmake-build ',
     hidden = true,
@@ -50,7 +63,8 @@ function _cmake_build()
     build:toggle()
 end
 
-map('n', '<leader>cs', '<cmd>lua _cmake_source()<cr>' ,opt)
+map('n', '<leader>cs', '<cmd>lua _cmake_source()<cr>', opt)
+map('n', '<leader>ccs', '<cmd>lua _cmake_clean_source()<cr>' ,opt)
 map('n', '<leader>cb', '<cmd>lua _cmake_build()<cr>' ,opt)
 --------------------------------------------------------------------------------
 
