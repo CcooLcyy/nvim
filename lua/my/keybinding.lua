@@ -55,7 +55,7 @@ function _cmake_clean_source()
 end
 
 local build = Terminal:new({
-    cmd = 'cmake --build cmake-build ',
+    cmd = 'cmake --build cmake-build --config Debug --target all -j 14',
     hidden = true,
     close_on_exit = false
 })
